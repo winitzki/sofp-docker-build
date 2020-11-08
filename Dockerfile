@@ -25,7 +25,7 @@ ADD test/* /tmp/
 # This will initialize and configure LyX and generate some Metafont files as well.
 RUN (cd /tmp/; lyx --export pdflatex sofp)
 
-RUN (cd /tmp/; pdflatex sofp.tex || cat sofp.log)
+RUN (cd /tmp/; pdflatex --interaction=batchmode sofp.tex || cat sofp.log)
 
 # This will fail if PDF file was not created.
 RUN rm /tmp/sofp.pdf
