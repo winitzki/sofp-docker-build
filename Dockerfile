@@ -20,5 +20,6 @@ RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN lyx -batch -x reconfigure
+RUN lyx --export pdf test/sofp
 
+RUN rm -f test/*.pdf
