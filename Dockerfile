@@ -20,10 +20,10 @@ RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-ADD test /tmp/test
+ADD test/* /tmp/
 
 # This will initialize and configure LyX and generate some Metafont files as well.
-RUN (cd /tmp/test; lyx --export pdf sofp || cat sofp.log)
+RUN (cd /tmp/; ls -l; lyx --export pdf sofp || cat sofp.log)
 
 # This will fail if PDF file was not created.
-RUN rm /tmp/test/sofp.pdf
+RUN rm /tmp/sofp.pdf
