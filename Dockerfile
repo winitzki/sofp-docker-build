@@ -20,3 +20,5 @@ RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+RUN lyx -batch -x reconfigure
+
