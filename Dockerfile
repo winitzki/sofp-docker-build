@@ -22,7 +22,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 ADD test /tmp/test
 
-RUN lyx --export pdf /tmp/test/sofp
+RUN (cd /tmp/test; lyx --export pdf sofp)
 
 # This will fail if PDF file was not created.
 RUN rm /tmp/test/sofp.pdf
