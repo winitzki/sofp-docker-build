@@ -20,7 +20,7 @@ RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-COPY test /tmp/
+ADD test /tmp/test
 
 RUN lyx --export pdf /tmp/test/sofp
 
