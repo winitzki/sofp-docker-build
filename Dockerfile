@@ -22,7 +22,8 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 ADD test /tmp/test
 
-RUN (cd /tmp/test; lyx --export pdf sofp)
+# This will initialize and configure LyX and generate some Metafont files as well.
+RUN (cd /tmp/test; lyx --export pdf sofp || cat sofp.log)
 
 # This will fail if PDF file was not created.
 RUN rm /tmp/test/sofp.pdf
