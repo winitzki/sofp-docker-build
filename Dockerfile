@@ -20,8 +20,9 @@ RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-COPY test/ /test/
+COPY test /tmp/
 
-RUN lyx --export pdf test/sofp
+RUN lyx --export pdf /tmp/test/sofp
 
-RUN rm -f test/*.pdf
+# This will fail if PDF file was not created.
+RUN rm /tmp/test/sofp.pdf
