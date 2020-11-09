@@ -23,7 +23,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 ADD test/* /tmp/
 
 # This will initialize and configure LyX and generate some Metafont files as well.
-RUN (cd /tmp/; lyx -userdir /tmp/.lyx --export pdflatex sofp)
+RUN (cd /tmp/; lyx --export pdflatex sofp)
 
 RUN (cd /tmp/; pdflatex --interaction=batchmode sofp.tex || cat sofp.log)
 
