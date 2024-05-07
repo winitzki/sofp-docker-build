@@ -1,3 +1,4 @@
+[![Build status](https://github.com/winitzki/sofp-docker-build/workflows/Build%20SOFP/badge.svg)](https://github.com/winitzki/sofp-docker-build/actions)
 # sofp-docker-build
 
 A Docker image for building the PDF version of the "Science of Functional Programming" book.
